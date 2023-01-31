@@ -1,0 +1,75 @@
+body {
+    font-family: 'Noto Sans HK', sans-serif;
+    margin: 0;
+    padding:0;
+    background-image: url("../image/museo3.jpg");
+    background-size: cover;
+}
+
+/* Stile per il form, generalit� per tutti: immagine del mare senza ripetizioni per tutto il blocco, bordi neri e scritte nere*/
+#modulo {
+    border-top: solid 2px white;
+    padding: 100px;
+    color: white;
+    overflow: hidden;
+    position: relative;    
+}
+
+/* Stile per il titolo del form. Il testo � allineato al centro*/
+.content {
+	z-index:1;
+	position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top:60px;
+    float: left;
+    text-align: center;
+}
+
+/*  Stile per il pulsante. Background non sfumato dello stesso colore degli input, 
+	traslato più in grande, con le lettere maiuscole e con il cursore a manina per 
+	indicare che è possibile cliccarci sopra
+*/
+ .pulsante {
+    color: white;
+    background:darkred;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 2px white;
+    border-radius: 20px;
+    padding:20px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* Stile per il la posizione del pulsante del form, in basso al centro*/
+.due {
+    padding-top: 30px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+    
+/* Stile per le label, centrate per avvicinarsi alla colonna di destra */
+#modulo label {
+    display: block;
+    margin-left: 500px;
+    padding-top: 10px;
+    text-align: left;
+    text-decoration: solid;
+    font-size: 22px;
+}
+
+/* Stile per gli input, con background sfumato*/
+#modulo input {
+    border: solid 1px white;
+    margin-left: 10px;
+    background: darkred;
+}
+
+#modulo span {
+	color: darkred;
+	text-align: right;
+	padding-left: 10px;
+	font-size: 9px;
+}
+    

@@ -1,0 +1,74 @@
+body {
+    font-family: 'Noto Sans HK', sans-serif;
+    margin: 0;
+}
+    
+.parallax {
+	background: url(../image/vangogh.jpg)
+	repeat fixed 100%;
+	background-repeat: no-repeat;
+	background-size: cover;	
+}
+
+.parallax-inner {
+    padding-top: 25%;
+    padding-left: 80px;
+    text-align: left;
+    font-size: 40px;
+    color: #000;
+}
+
+#biografia {   
+    width: 90%;
+    margin-left: 15px;
+    text-position:center;
+    text-align: justify;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    color: #808080;
+}
+
+.bio {   
+    font-size: 17px;
+    color: #000;
+}
+
+#opera {
+    width: 100%;
+    background-color: #000;
+    border-bottom: solid 2px #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.primo {
+    border-bottom: 1px solid darkred;
+    margin-left: 200px;
+    padding-right: 100px;
+    margin-right: 200px;
+}
+
+.descr {
+padding-right: 100px;
+padding-left:100px;
+    text-align:center;
+    color: darkred;
+}
+
+.descr2 {
+    padding-right: 100px;
+    padding-left: 100px;
+    text-align: center;
+    color: darkred;
+}
+
+#opera ul {
+	list-style-type: none;
+}
+
+#opera a {
+	color:white;
+}

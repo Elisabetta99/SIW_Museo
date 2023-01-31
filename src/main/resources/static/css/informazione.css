@@ -1,0 +1,27 @@
+body {
+    font-family: 'Noto Sans HK', sans-serif;
+    margin: 0;
+}
+    
+.parallax {
+	background: url(../image/foto.jpg)
+	repeat fixed 100%;
+	background-repeat: no-repeat;
+	background-size: cover;	
+}
+
+.parallax-inner {
+    padding-top: 25%;
+    padding-left: 80px;
+    text-align: left;
+    font-size: 50px;
+    color: #000;
+}
+
+.info {
+	margin-left :20px;
+}
+
+.info h4 {
+	margin-bottom: 5px;
+}

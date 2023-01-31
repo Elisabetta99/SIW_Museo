@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lan=it xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+
+	<!-- logo -->
+	<link rel=icon th:href="@{image/museo.png}">
+
+	<!-- titolo mostrato per la pagina dell'itinerario -->
+	<title>Informazioni</title>
+
+	<!-- riferimento al foglio di stile css chiamato stile in stili relativo a tutto il progetto -->
+	<link th:href="@{css/base.css}" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{css/informazione.css}" />
+ 
+     <!--reset css-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!--font preso da google-->
+ 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100&display=swap" rel="stylesheet">
+ 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	
+	<section class="parallax">
+		<div class="parallax-inner"><strong>Informazioni</strong></div>
+	</section>
+	
+	<section class="info">
+		<div >
+			<p>
+				<h4>ORARI:</h4> <br> Lunedì-Venerdì &nbsp; 9:00-17:00 <br> Sabato-Domenica &nbsp; 9:00-20:00 <br>
+
+				<h4>NOTTE BIANCA:</h4> 20 giugno &nbsp; 21:00-00:00
+			</p>
+			<p>
+			<h4>PREZZI BIGLIETTI:</h4> </br>
+			Intero:&nbsp; 12€ </br>
+			Ridotto (over 70):&nbsp; 10€ </br>
+			Ridotto Junior (sotto i 12 anni):&nbsp; 6€ </br>
+			Ridotto Studenti:&nbsp; 6€ </br>
+			Family Ticket (2 adulti + 2 bambini):&nbsp; 24€  
+			</p>
+		</div>
+	</section>
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

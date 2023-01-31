@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lan=it xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    
+    <!-- logo -->
+    <link rel=icon th:href="@{/image/museo.png}">  
+    <title>Collezione</title>
+    
+    <link rel="stylesheet" th:href="@{/css/collezione.css}">
+     <link th:href="@{/css/base.css}" rel="stylesheet">
+     
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!--reset css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--font preso da google-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+   
+</head>
+
+<body>
+<header th:replace="fragments/base.html :: intestazione"></header>
+    <div th:if="${collezione}" th:object="${collezione}">
+        
+        <section id="title">
+            <h1 class="big-text">Collezione</h1>
+        </section>
+        
+        <section id="descrizione">
+            <h3 class="med-text"  th:text="${nome}">Galleria dell'arte impressionista e post-impressionista</h3>
+            <h4 ><span th:each="curatore : ${curatori}" th:text="${curatore.nome} + ' ' + ${curatore.cognome}"></span></h4>
+            <div class="testo">
+                <span th:text="*{descrizione}" th:style="'color:black'">
+                    Dal 16 giugno al Museo dell'arte impressionista </strong> apre la mostra <strong> Impressionisti e Post-impressionisti </strong>, prodotta e organizzata da <strong>Serena Bruni</strong>. </br> 
+                    Per celebrare l'apertura del Museo saranno esposte oltre 50 opere dei <strong>più grandi maestri </strong>dell’impressionismo (Claude Monet, Edgar Degas, Edouard Manet, Pierre Auguste Renoir) e del post impressionismo ( Vincent van Gogh).
+                    Opere provenienti da collezioni private raramente accessibili e concessi eccezionalmente per questa mostra.
+                </span>
+            </div>
+        </section>
+
+        <div class="opera2">         
+          <div class="descrizione" th:each="opera : ${opere}" >
+          	<img th:src="@{{image}(image=${opera.file})}" width="500" height="400" hspace="15" vspace="15" />
+          	<a  href="opera.html" class="descr"
+				   th:href="@{'/opera' + '/' + ${opera.id}}" 
+				   th:text="${opera.titolo}" th:style="'color:white'" >Notte stellata sul Rodano</a>
+				    <div class="img">
+            </div>      
+        </div>   
+    </div>
+    
+    <div th:unless="${collezione}">Non esiste questa collezione</div>
+
+   <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

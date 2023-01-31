@@ -1,0 +1,288 @@
+/*Base Style*/
+body {
+    font-family: 'Noto Sans HK', sans-serif;
+    background-color: floralwhite;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, p {
+    color: black;
+    padding-bottom: 5px;
+}
+
+.big-text {
+    font-size: 70px;
+}
+
+.med-text {
+    font-size: 40px;
+}
+
+.normal-text {
+    font-size: 20px;
+}
+
+/*Barra di navigazione*/
+
+.checkbox {
+    display: none;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background-color: darkred;
+}
+
+header-container {
+    width: 90%;
+    position: relative;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.btn-label {
+    width: 2rem;
+    height: 1.4rem;
+}
+
+header-button {
+    width: 2rem;
+    height: 0.2rem;
+    background-color: black;
+    position: center;
+    top: 1.9rem;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.header-button::before, .header-button::after {
+    content: "";
+    width: 2rem;
+    height: 0.3rem;
+    background-color: black;
+    position: absolute;
+    align-content: center;
+    transition: all 0.2s;
+    margin-top: 40px;
+    z-index: 10;
+}
+
+.header-button::after {
+    top: 0.6rem;
+}
+
+.menu {
+    background-color: darkred;
+    width: 100%;
+    height: 10rem;
+    position: fixed;
+    z-index: 9;
+    top: -12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    padding-top: 2rem;
+    transition: all 0.5s;
+    font-size: 25px;
+    z-index: 9;
+}
+
+ul {
+    list-style: none;
+    display: inline-flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+li {
+    margin: 0.5rem;
+}
+
+a {
+    margin: 0.1rem;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+	color:black;
+}
+
+.checkbox:checked ~ .menu {
+    background-color: darkred;
+    top: 0rem;
+}
+
+.checkbox:checked + header .header-container label .header-button {
+    background: none;
+}
+
+.checkbox:checked + header .header-container label .header-button::before {
+    transform: rotate(35deg);
+    top: 0;
+}
+
+.checkbox:checked + header .header-container label .header-button::after {
+    transform: rotate(-35deg);
+    top: 0;
+}
+
+
+
+/*Hero*/
+.hero {
+    background-color: darkred;
+    height: 600px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    z-index: 5;
+}
+
+.hero__content {
+    width: 100%;
+    max-width: 1350px;
+    margin: 100px;
+}
+
+#i1, #i2, #i3, #i4 {
+    display: none;
+}
+
+.dots {
+    justify-content: center;
+    z-index: 8;
+    display: flex;
+    position: absolute;
+}
+
+.dots label {
+    top: 430px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all 0.15s ease;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.dots label:hover {
+    background-color: #FFF;
+}
+
+#img1:checked ~ .m1 {
+    margin-left: 0;
+}
+
+#img2:checked ~ .m2 {
+    margin-left: -100%;
+}
+
+#img3:checked ~ .m3 {
+    margin-left: -200%;
+}
+
+#img4:checked ~ .m4 {
+    margin-left: -300%;
+}
+
+#slider {
+    overflow: hidden;
+    max-height: 400px;
+    width: 100%;
+    margin-top: 100px;
+    margin-right: 50px;
+    z-index: 7;
+    position: relative;
+}
+
+#slider input {
+    display: none;
+}
+
+/*animation che impiega 20 secondi totali ad arrivare alla fine delle foto*/
+#slider figure {
+    position: relative;
+    width: 500%;
+    margin-top: 10px;
+    animation: 20s slider infinite;
+    z-index: 8;
+}
+
+#slider figure img {
+    width: 20%;
+    float: left;
+}
+
+/*fa partire animazione*/
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+
+    20% {
+        left: 0;
+    }
+
+    25% {
+        left: -100%;
+    }
+
+    45% {
+        left: -100%;
+    }
+
+    50% {
+        left: -200%;
+    }
+
+    70% {
+        left: -200%;
+    }
+
+    75% {
+        left: -300%;
+    }
+
+    95% {
+        left: -300%;
+    }
+
+    100% {
+        left: -400%;
+    }
+}
+
+#aboutUs {
+    width: 90%;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-left: 15px;
+    text-position: center;
+    text-align: justify;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    color: #000;
+}
+
+.services {
+    padding-top: 20px;
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+    border-left: solid 2px;
+    border-right: solid 2px;
+    border-color: black;
+}
+

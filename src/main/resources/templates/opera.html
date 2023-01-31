@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lan=it xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<!-- logo -->
+	<link rel=icon th:href="@{image/logoBianco.png}" >
+	<title>Opera</title>
+	
+	<!--reset css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--font preso da google-->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@700&display=swap" rel="stylesheet">	
+	
+	<link rel="stylesheet" th:href="@{/css/opera.css}" />
+	<link th:href="@{/css/base.css}" rel="stylesheet">
+</head>
+<body>
+	<section>
+	<div th:if="${opera}" th:object="${opera}" >
+	<img th:src="@{{image}(image=${opera.file})}" width="700px" height="500px" hspace="15px" vspace="15px" align="left" /> 
+		<section id="paragrafo">
+			<p>
+			<h1 class="titolo" th:if="${titolo}">Notte stellata</h1> <div th:text="*{anno}"> 1889 </div>
+			<div class="descr">
+				<a th:each="artista : ${artisti}" href="artista.html" 
+				   th:href="@{'/artista' + '/' + ${artista.id}}" 
+				   th:text="${artista.nome} + ' ' + ${artista.cognome}" th:style="'color:black'"> Vincent van Gogh </a>
+			</div>
+			
+			<span th:text="*{descrizione}">
+			Nel 1888, prima dell'internamento a Saint-Rémy, van Gogh scrisse: </br></br>
+			"Con un quadro vorrei poter esprimere qualcosa di commovente come una musica. </br>Vorrei dipingere uomini e donne con un non so che di eterno, di cui un tempo era simbolo l’aureola, e che noi cerchiamo di rendere con lo stesso raggiare, con la vibrazione dei colori [...].</br> Ah il ritratto, il ritratto che mostri i pensieri, l’anima del modello: ecco cosa credo debba vedersi"
+			</br></br>
+			La Notte stellata, certamente una delle opere vangoghiane più celebri, risponde perfettamente a quest'esigenza. In questo dipinto, infatti, il pittore ha certamente cercato il contatto diretto con la realtà, dipingendo quello che si poteva vedere dalla finestra della sua stanza nel manicomio di Saint-Rémy. Van Gogh, tuttavia, non ha ripreso fedelmente questa veduta notturna, bensì l'ha manipolata con mezzi plastici, interiorizzandola fino allo spasimo e trasformandola in una potente visione onirica in cui poter fare affiorare le sue emozioni, le sue paure, i suoi viaggi dell'anima. La Notte stellata, pertanto, non offre all'osservatore un'immagine fedele della realtà, quanto una forma di «espressione» di quest'ultima.
+			</span>
+		</section>
+	</section>
+	</div>
+	
+	<div th:unless="${opera}">Non esiste questa opera</div>
+
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html>

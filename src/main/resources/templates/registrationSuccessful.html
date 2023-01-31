@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	
+	<link rel=icon th:href="@{image/logoBianco.png}" >	
+	<title> Esito registrazione </title>
+	
+	<link rel="stylesheet" th:href="@{css/registrationSuccessful.css}" />
+	<link th:href="@{css/base.css}" rel="stylesheet">
+	
+	<!--reset css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--font preso da google-->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@700&display=swap" rel="stylesheet">	
+</head>
+
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<div class="content">
+		<h1>Registrazione effettuata con successo!</h1>
+		<h2>Accedi per proseguire</h2>
+		<a th:href="@{/login}" class="button">Accedi</a>
+	</div>
+    <footer></footer>
+</body>
+</html>

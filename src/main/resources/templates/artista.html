@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lan=it xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <!-- logo -->
+    <link rel=icon th:href="@{/image/museo.png}">
+    
+    <!-- titolo mostrato per la pagina dell'itinerario -->
+    <title>Artista</title>
+    
+    <!-- riferimento al foglio di stile css chiamato stile in stili relativo a tutto il progetto -->
+    <link rel="stylesheet" th:href="@{/css/artista.css}" />
+    <link th:href="@{/css/base.css}" rel="stylesheet">
+    
+    <!--font preso da google-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header th:replace="fragments/base.html :: intestazione"></header>
+    <div th:if="${artista}" th:object="${artista}">
+    <section class="parallax">
+        <div class="parallax-inner"><h1 th:text="*{nome} + ' ' + *{cognome}">Nome e Cognome</h1></div>
+    </section>
+
+    <section id="biografia">
+        <div th:text="*{dataDiNascita}"> </div> <span th:text="*{luogoDiNascita}">Luogo di nascita</span> <span th:text="*{dataDiMorte}"> </span> <span th:text="*{luogoDiMorte}">Luogo di morte</span>
+        <div class="bio" th:text="*{descrizione}">
+            <p> Descrizione </p>
+        </div>
+
+    </section>
+
+    <section id="opera">
+        <div>
+            <h2 class="primo"></h2>
+            <h2>OPERE</h2> <div th:object="${size}" th:text="${size}"></div>
+            <h2 class="primo"></h2>
+        </div>
+        <ul>
+			<li th:each="opera : ${opere}">
+			<img th:src="@{{image}(image=${opera.file})}" width="400px" height="250px" hspace="15px" vspace="15px" /> 
+				<a href="opera.html" 
+				   th:href="@{'/opera' + '/' + ${opera.id}}" 
+				   th:text="${opera.nome}">Nome opera</a>
+			</li>
+		</ul>
+        </div>
+    	<div th:unless="${opere}">Questa opera non esiste</div>
+    </section>
+	</div>
+    	<div th:unless="${artista}" th:style="'color:white'">Questo artista non esiste</div>
+    </div>
+   <footer th:replace="fragments/base.html :: fondo"></footer>
+
+</body>
+</html>

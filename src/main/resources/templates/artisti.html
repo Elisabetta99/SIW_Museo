@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lan=it xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    
+    <!-- logo -->
+    <link rel=icon th:href="@{image/museo.png}">
+    
+    <!-- titolo mostrato per la pagina dell'itinerario -->
+    <title>Elenco Artisti</title>
+    
+    <!-- riferimento al foglio di stile css chiamato stile in stili relativo a tutto il progetto -->
+    <link rel="stylesheet" th:href="@{/css/artisti.css}" />
+    <link th:href="@{/css/base.css}" rel="stylesheet">
+    
+    <!--font preso da google-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@700&display=swap" rel="stylesheet">         
+</head>
+
+<body>
+    <header th:replace="fragments/base.html :: intestazione"></header>
+    <ul class="push">
+			<li th:each="artista : ${artista}">
+				<a href="artista.html" 
+				   th:href="@{'/artista' + '/' + ${artista.id}}" 
+				   th:text="${artista.nome} + ' ' + ${artista.cognome}" th:style="'color:black'">Artisti</a>
+			</li>
+		</ul>
+		 <footer th:replace="fragments/base.html :: fondo"></footer>
+</body>
+</html> 

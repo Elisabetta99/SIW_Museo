@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lan=it xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	
+	<!-- logo -->
+	<link rel=icon th:href="@{image/museo.png}">
+	<title>Museo dell'arte impressionista</title>
+	
+	<link rel="stylesheet" th:href="@{css/style.css}">
+	<link th:href="@{css/base.css}" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/2.0.0/normalize.min.css" integrity="sha512-r55mjcDHW7eaxVq7wHjguH+oMetSweoBhj1GU9WHRY7j9/RED3Z0zcRiy5ELomhBcQoS3bFWjJyNz9OCVYyGlA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+
+	<!--font preso da google per nome museo-->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@700&display=swap" rel="stylesheet">
+	<!--font preso da google per testo-->
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<input type="checkbox" id="btn-nav" class="checkbox">
+	<header>
+		<div class="header-container">
+			<img class="header-logo" th:src="@{image/logo.png}" width="60" height="60" align="left"> 
+			<label for="btn-nav" class="btn-label" align="center">
+				<div class="header-button"></div>
+			</label>
+		</div>
+	</header>
+	<nav class="menu">
+		<ul>
+			<li><a th:href="@{/artisti}">Autori</a></li>
+			<li><a th:href="@{/collezioni}">Collezioni</a></li>
+			<li><a th:href="@{/informazioni}">Informazioni</a></li>
+		</ul>
+	</nav>
+
+	<div class="hero">
+		<!--elemento del content-->
+		<div class="hero__content">
+			<h2 class="med-text">Benvenuti al</h2>
+			<h1 class="big-text">Museo dell'arte impressionista</h1>
+		</div>
+
+
+		<div id="slider">
+			<figure>
+				<input type="radio" name="slider" id="img1" checked>
+				<input type="radio" name="slider" id="img2">
+				<input type="radio" name="slider" id="img3">
+				<input type="radio" name="slider" id="img4">
+				<input type="radio" name="slider" id="img1">
+				<img th:src="@{image/opera1.jpg}" class="m1" alt="img1">
+				<img th:src="@{image/opera2.jpg}" class="m2" alt="img2">
+				<img th:src="@{image/opera3.jpg}" class="m3" alt="img3">
+				<img th:src="@{image/opera4.jpg}" class="m4" alt="img4">
+				<img th:src="@{image/opera1.jpg}" class="m1" alt="img1">
+			</figure>
+
+			<div class="dots">
+				<label for="img1"></label> <label for="img2"></label> 
+				<label for="1mg3"></label> <label for="img4"></label>
+			</div>
+		</div>
+	</div>
+	
+	<section id="aboutUs">
+		<div>
+			<h2>About Us</h2>
+			Il Museo dell'arte impressionista nasce circa trent'anni fa, quando
+			la passione e l'amore per l'arte condussero Matteo Rossi, tuttora
+			fondatore e direttore del museo, ad aprire una piccola mostra di
+			quadri in una delle sue residenze. </br> Da allora, il Museo dell'arte
+			impressionista ha continuato ad espandersi, grazie anche all'aiuto di
+			molti benefattori, portando alla raccolta di opere che possiamo
+			ammirare noi oggigiorno
+		</div>
+		<div>
+			<div>
+				<h3>Servizi:</h3>
+				<br> <img th:src="@{image/services.jpg}" class="services"
+					height="150" width="1200">
+			</div>
+		</div>
+	</section>
+
+	<footer th:replace="fragments/base.html :: fondo"></footer>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+body {
+    font-family: 'Noto Sans HK', sans-serif;
+    margin: 0;
+    background-color: white;
+}
+
+#paragrafo {
+    text-align: justify;
+    font-size: 17px;
+    margin-right: 10px;
+
+}
+.titolo {
+    text-align: center;
+    font-size: 48px;
+    text-transform: full-width;
+ 
+}
+.descr {
+    margin-top: 20px;
+    padding-bottom: 30px;
+    font-size: 20px;
+    color: darkred;
+    text-decoration: none;   
+}
+
+

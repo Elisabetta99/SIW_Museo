@@ -1,0 +1,84 @@
+body {
+    font-family: 'Noto Sans HK', sans-serif;
+    margin: 0;
+}
+
+/*Font*/
+h1, h3, h4, p {
+    color: black;   
+}
+
+.big-text {
+    font-size: 70px;
+}
+
+.med-text {
+    font-size: 40px;
+}
+
+.normal-text {
+    font-size: 20px;
+}
+
+#title {
+    border-top: solid 2px;
+    border-bottom: solid 2px;
+    border-color: black;
+    text-align: center;
+    text-transform: full-width;
+    overflow: hidden;
+    position: relative;
+    background-color: darkred;
+    width:100%;
+}
+
+#descrizione {
+    width: 100%;
+    height:auto;
+    margin-left: 15px;
+    margin-top:5px;
+    margin-bottom:5px;
+    font-size: 17px;
+    color: black;
+}
+
+.testo {
+    font-size: 15px;
+    color: black;
+}
+
+.opera1, .opera2, .opera3, .opera4 {
+    width: 98%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1%;
+    background-color: black;
+}
+
+.img {
+    width: 50%;
+    height: auto;
+    flex: 40%;
+}
+
+.descrizione {
+    width: 50%;
+    height: auto;
+    flex: 60%;
+    text-align: center;
+    
+}
+
+.descrizione a {
+    color:darkred;
+    display:flex;
+    flex-direction:column;
+    font-size:19px;
+}
+
+.descrizione p {
+    color:white;
+    font-family: 'Great Vibes', cursive;
+    font-size:30px;
+}

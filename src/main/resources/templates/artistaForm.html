@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lan=it xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    
+    <!-- logo -->
+    <link rel=icon th:href="@{/image/museo.png}">
+    
+    <!-- titolo mostrato per la pagina dell'itinerario -->
+    <title>Form</title>
+    
+    <!-- riferimento al foglio di stile css chiamato stile in stili relativo a tutto il progetto -->
+    <link rel="stylesheet" th:href="@{/css/form.css}" />
+   <link th:href="@{/css/base.css}" rel="stylesheet">
+   
+    <!--font preso da google-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header th:replace="fragments/base.html :: intestazione"></header>
+    <section id="modulo">
+	<div class="content">
+    <div>
+		<h4>Inserisci i dati dell'artista</h4>
+	</div>
+	<form th:action="@{/admin/artista}" method="POST" th:object="${artista}">	
+		<div>
+			<div>
+				<label>Nome:</label>
+				<span><input type="text" th:field="*{nome}" /></span>
+			</div>	
+			<div>
+				<label>Cognome:</label>
+				<span><input type="text" th:field="*{cognome}" /></span>
+			</div>	
+			<div>
+				<label>Nazionalità:</label>
+				<span><input type="text" th:field="*{nazionalita}" /></span>
+			</div>	
+			<div>
+				<label>Citazione:</label>
+				<span><input type="text" th:field="*{descrizione}" /></span>
+			</div>	
+			<div>
+				<label>Louogo di nascita:</label>
+				<span><input type="text" th:field="*{luogoDiNascita}" /></span>
+			</div>
+			<div>
+				<label>Data di nascita:</label>
+				<span><input type="date" th:field="*{dataDiNascita}" /></span>
+			</div>
+			<div>
+				<label>Louogo di morte:</label>
+				<span><input type="text" th:field="*{luogoDiMorte}" /></span>
+			</div>
+			<div>
+				<label>Data di morte:</label>
+				<span><input type="date" th:field="*{dataDiMorte}" /></span>
+			</div>
+			<div>
+				<span><button type="submit" class="pulsante">Conferma Artista</button></span>
+			</div>
+		</div>
+		<a th:ref="/admin/addOpera"> Inserisci opera! </a>
+	</form>
+	<footer></footer>
+</body>
+</html>
+    

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head> 
+	<meta charset="utf-8" />
+	<link rel=icon th:href="@{image/logoBianco.png}" >
+	<title> Registra un nuovo account </title>
+	
+	<link rel="stylesheet" th:href="@{css/form.css}" />
+	<link th:href="@{css/base.css}" rel="stylesheet">
+</head>
+
+<body>
+	<header th:replace="fragments/base.html :: intestazione"></header>
+	<section id="modulo">
+	<div class="content">
+    	<h1>Registrazione</h1>
+		<form th:action="@{/register}" method="POST">
+        <tr>
+            <label>Username</label>
+            <span><input type="text" placeholder="username" required th:field="${credentials.username}"/></span>
+            <span th:if="${#fields.hasErrors('credentials.username')}" th:errors="${credentials.username}" th:style="'color:red'"></span>
+        </tr>
+        <tr>
+            <label>Password</label>
+            <span><input type="password" placeholder="password" required th:field="${credentials.password}"/></span>
+            <span th:if="${#fields.hasErrors('credentials.password')}" th:errors="${credentials.password}" th:style="'color:red'"></span>
+        </tr>
+        <tr>
+            <label>Nome</label>
+            <span><input type="text" placeholder="nome" required th:field="${user.nome}"/></span>
+            <span th:if="${#fields.hasErrors('user.nome')}" th:errors="${user.nome}" th:style="'color:red'"></span>
+        </tr>
+        <tr>
+            <label>Cognome</label>
+            <span><input type="text" placeholder="cognome" required th:field="${user.cognome}"/></span>
+            <span th:if="${#fields.hasErrors('user.cognome')}" th:errors="${user.cognome}" th:style="'color:red'"></span>
+        </tr>
+        <tr>
+            <div class="due">
+                 <input type="submit" value="Registrati" class="pulsante"/>
+            </div>
+        </tr>
+	</form>
+	</div>
+	</section>
+    <footer></footer>
+</body>
+</html>
